@@ -2,6 +2,7 @@ import express, { NextFunction } from 'express';
 export const app = express();
 import cors from 'cors';
 import coolieParser from 'cookie-parser';
+import {ErrorMiddleware} from './middleware/error'
 require('dotenv').config();
 const Origin =  process.env.ORIGIN;
 
@@ -31,3 +32,6 @@ app.get('*', (req, res, next) => {
     err.status = 404;
     next(err);
 });
+
+//using error function
+app.use(ErrorMiddleware);
