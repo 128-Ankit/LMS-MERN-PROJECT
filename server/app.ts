@@ -1,9 +1,10 @@
+require('dotenv').config();
 import express, { NextFunction } from 'express';
 export const app = express();
 import cors from 'cors';
 import coolieParser from 'cookie-parser';
 import {ErrorMiddleware} from './middleware/error'
-require('dotenv').config();
+import userRouter from './routes/user-route'
 const Origin =  process.env.ORIGIN;
 
 
@@ -17,6 +18,9 @@ app.use(coolieParser());
 app.use(cors({
     origin:Origin
 }));
+
+//userRouter
+app.use('/api/v1', userRouter)
 
 //testing api
 app.get('/test', (req, res, next) => {
