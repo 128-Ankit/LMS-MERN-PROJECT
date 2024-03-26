@@ -1,4 +1,3 @@
-// import { error } from 'console';
 import {Redis} from 'ioredis';
 require('dotenv').config();
 

@@ -1,5 +1,4 @@
-import { log } from 'console';
-import mongoose from 'mongoose';
+const mongoose = require("mongoose")
 require('dotenv').config();
 
 const dbUrl:string = process.env.BD_URL || '';
@@ -16,15 +15,3 @@ const connectDB = async () => {
 }
 
 export default connectDB;
-
-// exports.connect = () => {
-//     mongoose.connect(dbUrl,{
-
-//     })
-//     .then(() => console.log("DB Connected Successfully"))
-//     .catch( (error) => {
-//         console.log("DB Connection Failed");
-//         console.error(error);
-//         process.exit(1);
-//     })
-// };

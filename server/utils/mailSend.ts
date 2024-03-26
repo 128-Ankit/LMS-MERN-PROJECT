@@ -1,9 +1,7 @@
 require('dotenv').config();
-import nodemailer, {Transporter} from 'nodemailer'; //install this package
-import ejs from 'ejs';
+import nodemailer, {Transporter} from 'nodemailer';  
+import ejs from'ejs';
 import path from 'path';
-// import { promises } from 'dns';
-
 interface EmailOptions{
     email:string;
     subject: string;
