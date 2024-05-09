@@ -8,3 +8,5 @@ const PORT = process.env.PORT || 3000;
    console.log(`server is started at port: ${PORT}`);
    connectDB();
  })
+
+ 
